@@ -1,0 +1,4 @@
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R   -------------------- dar permissão pra editar e incluir arquivos quando vem do docker
+
+rodar isso
+$ docker-compose run client git config --global --add safe.directory /usr/src/client

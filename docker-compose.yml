@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./web:/usr/src/peeper
+      - bundle:/usr/local/bundle
+    command: ./bin/rails-entrypoint.sh
+  client:
+    build:
+      context: .
+      dockerfile: dockerfile.ts
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./client:/usr/src/client
+    command: yarn dev
+volumes:
+  bundle:
