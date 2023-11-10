@@ -1,0 +1,14 @@
+<% if notice.present?%>
+    <p style="color: green"><%= notice %></p>
+<% end %>
+ <p>
+        <%= link_to  "criar", new_topic_path(@topic) %>
+</P>
+<div>
+   
+    <% @topics.each do |t| %>
+        <%= render t %><br />
+        <p><%= link_to "show", t %></p>
+        <hr />
+    <%end%>
+</div>
